@@ -9,7 +9,9 @@ class SocketService {
     this.onUserDisconnectedCallback = null;
   }
 
-  connect(serverUrl = 'https://pulseconnect-backend-dqql.onrender.com:5000') {
+  connect(serverUrl = 'https://pulseconnect-backend-dqql.onrender.com') {
+    // http://localhost:5000 on dev
+    // https://pulseconnect-backend-dqql.onrender.com:5000 on prod
     return new Promise((resolve, reject) => {
       this.socket = io(serverUrl);
       
